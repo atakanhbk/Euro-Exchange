@@ -7,8 +7,9 @@ document.getElementById("change").addEventListener("click",function () {
             const response = JSON.parse(this.responseText);
             const rate = response.rates.TRY;
             const amount = Number(document.getElementById("amount").value);
-            console.log("Test");
-            document.getElementById("tl").value = amount * rate;
+            
+            const result = amount * rate
+            document.getElementById("tl").value = result.toFixed(2);
          
         } 
       
