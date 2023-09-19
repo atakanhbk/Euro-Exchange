@@ -3,6 +3,7 @@ document.getElementById("change").addEventListener("click",function () {
     const xhr = new XMLHttpRequest();
 
     xhr.onload = function () {
+        
         if(this.status === 200){
             const response = JSON.parse(this.responseText);
             const rate = response.rates.TRY;
