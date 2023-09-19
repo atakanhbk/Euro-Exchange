@@ -1,0 +1,23 @@
+[
+{
+    "name" : "Atakan Höbek",
+    "department":"Bilişim",
+    "salary": 55000
+},
+
+{
+    "name" : "Hilal Höbek",
+    "department":"Eğitim",
+    "salary": 50000
+},
+
+{
+    "name" : "Levi Höbek",
+    "department":"Hayvan",
+    "salary": 5000
+}
+
+
+
+
+]
