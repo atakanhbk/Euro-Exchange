@@ -1,18 +1,14 @@
-function getData(url) {
-    const xhr = new XMLHttpRequest();
+async function getData(url) {
+  
+        const response = await fetch(url);
+        const data = await response.json();
 
-
-    xhr.onload = ()=> {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-           // Typical action to be performed when the document is ready:
-           const getDataAsJson = xhr.responseText;
-        
-           console.log(JSON.parse(xhr.responseText)[0].salary);
-        }
-    };
-    xhr.open("GET",url);
+        return data;
     
-    xhr.send();
+
+  
 }
 
-getData("example.json");
+getData("https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_oxBwKqWWamYRQhQEDQYNlLhaaTwwjfLWAoX2nL3c")
+.then(response => console.log(response))
+.catch(err => console.log(err));
