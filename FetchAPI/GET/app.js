@@ -1,15 +1,22 @@
 class Response {
     get(url) {
-        fetch(url)
+
+        return new Promise((resolve,reject) => {
+            fetch(url)
         .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err));
+        .then(data => resolve(data))
+        .catch(err => reject(err));
+        });
+        
     }
 
   
 }
 
-let response = new Response();
+let request = new Response();
+let albums;
 
-response.get("https://jsonplaceholder.typicode.com/albums");
+request.get("https://jsonplaceholder.typicode.com/albums")
+.then(albums => console.log(albums))
+.catch(err => console.log(err));
 
