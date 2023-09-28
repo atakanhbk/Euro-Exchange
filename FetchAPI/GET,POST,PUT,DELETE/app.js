@@ -44,6 +44,16 @@ class Response {
 
     }
 
+    delete() {
+        return new Promise((resolve, reject) => {
+            fetch('https://jsonplaceholder.typicode.com/albums/1', {
+                method: 'DELETE',
+            })
+            .then(response => resolve("Data process has succeed !!"))
+            .catch(err => reject("Data process has failed !!!"));
+        });
+    }
+
 }
 
 let request = new Response();
@@ -58,6 +68,10 @@ let request = new Response();
 // .then(newAlbum => console.log(newAlbum))
 // .catch(err => console.log(err));
 
-request.put("https://jsonplaceholder.typicode.com/albums/1", { userId: 1, title: "It has changed !!!" })
-.then(firstAlbum => console.log(firstAlbum))
+// request.put("https://jsonplaceholder.typicode.com/albums/1", { userId: 1, title: "It has changed !!!" })
+//     .then(firstAlbum => console.log(firstAlbum))
+//     .catch(err => console.log(err));
+
+request.delete("https://jsonplaceholder.typicode.com/albums/1")
+.then(response => console.log(response))
 .catch(err => console.log(err));
